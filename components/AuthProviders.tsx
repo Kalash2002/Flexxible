@@ -18,6 +18,7 @@ type Provider = {
 
 
 const AuthProviders = () => {
+    console.log("Auth")
     const [providers, setProviders] = useState<Providers | null>(null);
 
     useEffect(() => {

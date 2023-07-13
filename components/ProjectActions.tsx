@@ -12,6 +12,7 @@ type Props = {
 }
 
 const ProjectActions = ({ projectId }: Props) => {
+    console.log("project action")
     const [isDeleting, setIsDeleting] = useState<boolean>(false)
     const router = useRouter()
 

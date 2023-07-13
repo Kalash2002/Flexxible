@@ -19,7 +19,7 @@ type Props = {
 
 const ProjectForm = ({ type, session, project }: Props) => {
   const router = useRouter();
-
+  console.log("project form")
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [form, setForm] = useState<FormState>({
     title: project?.title || "",

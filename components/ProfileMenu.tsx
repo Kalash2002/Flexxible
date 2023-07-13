@@ -9,6 +9,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { SessionInterface } from "@/common.types";
 
 const ProfileMenu = ({ session }: { session: SessionInterface }) => {
+    console.log("profile menu")
     const [openModal, setOpenModal] = useState(false);
 
     return (
