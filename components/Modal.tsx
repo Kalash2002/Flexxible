@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import { useCallback, useRef, ReactNode } from "react";
 import { useRouter } from "next/navigation";
