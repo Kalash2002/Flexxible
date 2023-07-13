@@ -47,7 +47,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
   return (
     <section className="flexStart flex-col paddings mb-16">
       {/* <Categories /> */}
-
+       home
       <section className="projects-grid">
         {/* {projectsToDisplay.map(({ node }: { node: ProjectInterface }) => (
           <ProjectCard
