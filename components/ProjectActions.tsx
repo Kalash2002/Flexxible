@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -15,15 +15,15 @@ const ProjectActions = ({ projectId }: Props) => {
     const [isDeleting, setIsDeleting] = useState<boolean>(false)
     const router = useRouter()
 
-    
+
     const handleDeleteProject = async () => {
         setIsDeleting(true)
-        
+
         const { token } = await fetchToken();
 
         try {
             await deleteProject(projectId, token);
-            
+
             router.push("/");
         } catch (error) {
             console.error(error)

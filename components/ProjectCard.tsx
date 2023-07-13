@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -50,7 +50,7 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
                                 alt="profile image"
                             />
                             <p>{name}</p>
-                        </div>               
+                        </div>
                 </Link>
 
                 <div className="flexCenter gap-3">

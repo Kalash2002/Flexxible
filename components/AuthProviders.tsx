@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 
 import { getProviders, signIn } from 'next-auth/react';
 import React, { useEffect, useState } from 'react'
@@ -13,7 +13,7 @@ type Provider = {
     callbackUrl: string;
     signinUrlParams?: Record<string, string> | undefined;
   };
-  
+
   type Providers = Record<string, Provider>;
 
 
@@ -23,7 +23,7 @@ const AuthProviders = () => {
     useEffect(() => {
         const fetchProviders = async () => {
             const res = await getProviders();
-    
+
             setProviders(res);
         }
 
