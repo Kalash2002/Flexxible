@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 
 import { getProviders, signIn } from 'next-auth/react';
 import React, { useEffect, useState } from 'react'
