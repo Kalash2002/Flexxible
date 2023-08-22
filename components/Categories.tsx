@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { categoryFilters } from "@/constant";
 
 const Categories = () => {
-  console.log("categories")
+  //console.log("categories")
   const router = useRouter();
   const pathName = usePathname();
   const searchParams = useSearchParams();

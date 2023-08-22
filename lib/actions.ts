@@ -35,13 +35,16 @@ export const uploadImage = async (imagePath: string) => {
 
 const makeGraphQLRequest = async (query: string, variables = {}) => {
   try {
-    return await client.request(query, variables);
+    return  client.request(query, variables);
   } catch (err) {
     throw err;
   }
 };
 
-export const fetchAllProjects = (category?: string | null, endcursor?: string | null) => {
+export const fetchAllProjects = (
+  category?: string | null,
+  endcursor?: string | null
+) => {
   client.setHeader("x-api-key", apiKey);
 
   return makeGraphQLRequest(projectsQuery, { category, endcursor });
@@ -54,11 +57,11 @@ export const createNewProject = async (form: ProjectForm, creatorId: string, tok
     client.setHeader("Authorization", `Bearer ${token}`);
 
     const variables = {
-      input: { 
-        ...form, 
-        image: imageUrl.url, 
-        createdBy: { 
-          link: creatorId 
+      input: {
+        ...form,
+        image: imageUrl.url,
+        createdBy: {
+          link: creatorId
         }
       }
     };
@@ -115,7 +118,7 @@ export const createUser = (name: string, email: string, avatarUrl: string) => {
       avatarUrl: avatarUrl
     },
   };
-  
+
   return makeGraphQLRequest(createUserMutation, variables);
 };
 
