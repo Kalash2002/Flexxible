@@ -37,7 +37,7 @@ export const deleteProjectMutation = `
     }
   }
 `;
-      
+
 export const createUserMutation = `
 	mutation CreateUser($input: UserCreateInput!) {
 		userCreate(input: $input) {
@@ -55,8 +55,8 @@ export const createUserMutation = `
 `;
 
 export const projectsQuery = `
-  query getProjects($category: String, $endcursor: String) {
-    projectSearch(first: 8, after: $endcursor, filter: {category: {eq: $category}}) {
+  query getProjects($categories: String, $endcursor: String) {
+    projectSearch(first: 8, after: $endcursor, filter: {category: {eq: $categories}}) {
       pageInfo {
         hasNextPage
         hasPreviousPage
@@ -117,7 +117,7 @@ export const getUserQuery = `
     }
   }
 `;
-      
+
 export const getProjectsOfUserQuery = `
   query getUserProjects($id: ID!, $last: Int = 4) {
     user(by: { id: $id }) {
