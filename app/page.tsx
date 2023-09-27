@@ -34,23 +34,24 @@ export const revalidate = 0;
 
 
 const Home = async ({ searchParams: { category, endcursor } }: Props) => {
-  const searchParameter = useSearchParams();
+  // const searchParameter = useSearchParams();
 
-  const categories = searchParameter.get("category");
-  category = categories;
-  const data = await fetchAllProjects(category, endcursor) as ProjectSearch
+  // const categories = searchParameter.get("Frontend");
+  // category = categories;
+  const data = await fetchAllProjects("Frontend", endcursor) as ProjectSearch
+
 
   const projectsToDisplay = data?.projectSearch?.edges || [];
 
-  if (projectsToDisplay.length === 0) {
-    return (
-      <section className="flexStart flex-col paddings">
-        <Categories />
+   if (projectsToDisplay.length === 0) {
+     return (
+       <section className="flexStart flex-col paddings">
+         <Categories />
 
-        <p className="no-result-text text-center">No projects found, go create some first.</p>
-      </section>
-    )
-  }
+         <p className="no-result-text text-center">No projects found, go create some first.</p>
+       </section>
+         )
+   }
 
   return (
     <section className="flexStart flex-col paddings mb-16">

@@ -12,7 +12,7 @@ const client = new GraphQLClient(apiUrl);
 
 export const fetchToken = async () => {
   try {
-    const response = await fetch(`${serverUrl}/api/auth/token`);
+    const response = await fetch(`http://localhost:3000/api/auth/token`);
     return response.json();
   } catch (err) {
     throw err;
@@ -21,7 +21,7 @@ export const fetchToken = async () => {
 
 export const uploadImage = async (imagePath: string) => {
   try {
-    const response = await fetch(`${serverUrl}/api/upload`, {
+    const response = await fetch(`http://localhost:3000/api/upload`, {
       method: "POST",
       body: JSON.stringify({
         path: imagePath,
